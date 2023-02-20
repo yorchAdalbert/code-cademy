@@ -1,0 +1,7 @@
+@use 'colors' as *;
+
+%colored-banner {
+    background-color: $orangish-yellow;
+    text-align: center;
+    min-width: 31.25rem;
+}

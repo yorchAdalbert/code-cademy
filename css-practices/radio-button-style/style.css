@@ -1,0 +1,106 @@
+:root {
+    --form-control-color: rebeccapurple;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.form-control {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+/*
+    Step 1: Hide the native radio input
+
+    To accomplish this, you only need to set appearance: none.
+    This removes nearly all inherited browser styles.
+*/
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+}
+
+/*
+    Step 2: Custom Unchecked Radio Styles
+
+    For our custom radio. you'll update box styles on the base input element. This includes inheriting the font styles to ensure the use of em produces the desired sizing outcome, as well as using currentColor to inherit any update on the label's color.
+
+    We use em for the width, height, and border-width value to maintain the relative appearance. Good ole border-radius: 50% finishes the expected appearance by rendering the element as a circle.
+*/
+
+input[type="radio"] {
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+}
+
+.form-control+.form-control {
+    margin-top: 1em;
+}
+
+/* 
+    Step 3: Improve Input vs. Label Aligment
+*/
+
+input[type="radio"] {
+    transform: translateY(-0.075em);
+}
+
+/*
+    Step 4: The :checked State
+
+    It's time to bring in our ::before pseudo element which will be styled in order to represent the :checked state.
+
+    The :checked naming convention may be a little confusing here, but it is a CSS selector that is available for both radio buttons and checkboxes.
+*/
+
+input[type="radio"] {
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/*
+    Step 5: The :focus State
+
+    Remember: :focus is a temporary state, but it's very important that it is highly visible to ensure the accessibility of your form controls and other interactive elements.
+*/
+
+input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}

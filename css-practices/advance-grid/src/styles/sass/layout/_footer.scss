@@ -1,0 +1,6 @@
+@use '../base/' as *;
+
+footer {
+    @extend %colored-banner;
+    margin-top: 2.75rem;
+}

@@ -1,0 +1,90 @@
+@use "sass:math";
+
+// In Sass, the function fade-out makes a color more transparent by taking a number between 0 and 1
+// and decreasing opacity, or the alpha channel, by that amount
+
+// The fade-in color function changes a color by increasing its opacity
+
+// The fucntion adjust-hue($color, $degrees) changes the hue of a color by taking color and a number of
+// degrees (usually between -360 degrees and 360 degrees), and rotate the color wheel by that amount
+
+// Variables
+
+$width: 250px;
+$lagoon-blue: fade-out(#62fdca, 0.5); // Using the fade-out function
+$color: magenta;
+
+.math {
+    width: $width;
+    text-align: center;
+    background-color: $lagoon-blue;
+    color: $color;
+    height: math.div($width, 6);
+    line-height: math.div($width, 6);
+    border-radius: math.div($width, 30);
+    font-size: math.div(math.div($width, 6), 2);
+}
+
+// Color Functions
+// SASS also allows us to perform mathematical functions to compute measurements - including colors.
+// 1 The operation is performed on the red, green, and blue component
+// 2 It computes the answer by operating on every two digits
+// $color: #010203 + #040506
+// 01 + 04
+// 02 + 05
+// 03 + 06
+// The result is: #050709
+
+// Each Loop
+// It iterates on each of the values on a list.
+
+$list: (
+    orange 100px,
+    purple 150px,
+    teal 200px
+); // This is a list
+
+
+@each $color,
+$size in $list {
+    .#{"" + $color} {
+        background-color: $color;
+        height: $size;
+        width: $size;
+    }
+}
+
+// For Loops
+
+$total: 10;
+$step: math.div(360deg, $total);
+
+.ray {
+    height: 30px;
+}
+
+@for $i from 1 through $total {
+    .ray:nth-child(#{$i}) {
+        background: adjust-hue(blue, $i * $step);
+        width: if($i % 2==0, 300px, 350px);
+        margin-left: if($i % 2==0, 0px, 50px);
+    }
+}
+
+// Conditionals
+
+// width: if($condition, $value-if-true, $value-if-false);
+
+/*
+    @mixin deck($suit) {
+        @if($suit == hearts || $suit == spade) {
+            color: blue;
+        }
+        @else-if($suit == clovers || $suit == diamonds) {
+            color: red;
+        }
+        @else {
+            // Some rule
+        }
+    }
+*/

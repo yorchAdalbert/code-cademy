@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar {
+    padding: 1.5em;
+    background-color: black;
+    text-align: center;
+}
+
+.nav-element+.nav-element {
+    margin-top: .5em;
+}
+
+@media (min-width: 768px) {
+    .nav-bar--list {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-element+.nav-element {
+        margin-top: 0;
+        margin-left: 1em;
+    }
+}

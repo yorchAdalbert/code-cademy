@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Display: Flex</h1>
+    <div class="container" id="flex">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Display: Block</h1>
+    <div class="container" id="block">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+
+    <h1>Inline-flex</h1>
+    <div class="container small-container">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <div class="container small-container">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <div class="container small-container">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <div class="container small-container">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+
+    <!-- Using justify-content -->
+    <h1>Flex Start</h1>
+    <div class="container flex" id="flex-start">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Flex End</h1>
+    <div class="container flex" id="flex-end">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Flex Center</h1>
+    <div class="container flex" id="flex-center">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Space Around</h1>
+    <div class="container flex" id="space-around">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Space Between</h1>
+    <div class="container flex" id="space-between">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <hr>
+    
+    <!-- Aligning items -->
+    <h1>Align Start</h1>
+    <div class="container flex-center" id="align-start">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Align End</h1>
+    <div class="container flex-center" id="align-end">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Align Center</h1>
+    <div class="container flex-center" id="align-center">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Align Baseline</h1>
+    <div class="container flex-center" id="align-baseline">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box baseline">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+    <h1>Align Stretch</h1>
+    <div class="container flex-center" id="align-stretch">
+        <div class="box">
+            <h2>1</h2>
+        </div>
+        <div class="box">
+            <h2>2</h2>
+        </div>
+        <div class="box">
+            <h2>3</h2>
+        </div>
+    </div>
+
+    <!-- Flex-grow-->
+    <h1>Step 1</h1>
+    <div id="top">
+        <div class="top side">1</div>
+        <div class="top center">2</div>
+        <div class="top side">3</div>
+    </div>
+    <h1>Step 2</h1>
+    <div id="middle">
+        <div class="middle side">1</div>
+        <div class="middle center">2</div>
+        <div class="middle side">3</div>
+    </div>
+    <h1>Step 3</h1>
+    <div id="bottom">
+        <div class="bottom side">1</div>
+        <div class="bottom center">2</div>
+        <div class="bottom side">3</div>
+    </div>
+
+    <!-- Flex-shrink -->
+    <h1>Flex-shrink</h1>
+    <h1>Step 1</h1>
+    <div id="top">
+        <div class="shrink top side">1</div>
+        <div class="shrink top center">2</div>
+        <div class="shrink top side">3</div>
+    </div>
+    <h1>Step 2</h1>
+    <div id="middle">
+        <div class="shrink middle side">1</div>
+        <div class="shrink middle center">2</div>
+        <div class="shrink middle side">3</div>
+    </div>
+    <h1>Step 3</h1>
+    <div id="bottom">
+        <div class="shrink bottom side">1</div>
+        <div class="shrink bottom center">2</div>
+        <div class="shrink bottom side">3</div>
+    </div>
+
+    <!-- Flex-basis -->
+    <h1>Flex-basis</h1>
+    <h1>Grows</h1>
+    <div id="top">
+        <div class="grow side new-box">1</div>
+        <div class="grow center new-box">2</div>
+        <div class="grow side new-box">3</div>
+    </div>
+    <h1>Shrinks</h1>
+    <div id="middle">
+        <div class="shrink side new-box">1</div>
+        <div class="shrink center new-box">2</div>
+        <div class="shrink side new-box">3</div>
+    </div>
+
+    <!-- Flex property -->
+    <h1>Flex</h1>
+    <h1>Top</h1>
+    <div id="top">
+        <div class="new-box side">1</div>
+        <div class="new-box center">2</div>
+        <div class="new-box side">3</div>
+    </div>
+    <h1>Bottom</h1>
+    <div id="bottom">
+        <div class="new-box side">1</div>
+        <div class="new-box center">2</div>
+        <div class="new-box side">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+main {
+    display: grid;
+    grid-template-columns: 19rem 19rem;
+    grid-template-rows: repeat(3, 28.125rem);
+    grid-auto-rows: 28.125rem;
+    grid-auto-flow: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    gap: 1.25rem;
+    margin-top: 2.75rem;
+
+    .recipe {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+        width: 12.5rem;
+
+        .recipe-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .time {
+            width: 1.4rem;
+            height: auto;
+            margin-left: .625rem;
+        }
+    }
+
+    .a {
+        align-self: end;
+    }
+
+    .c {
+        justify-self: start;
+    }
+
+}

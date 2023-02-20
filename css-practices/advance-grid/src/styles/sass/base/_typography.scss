@@ -1,0 +1,36 @@
+@use 'colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+h2 {
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+    text-align: left;
+    color: $orangish-yellow;
+    padding: .625rem 0 .625rem .625rem;
+}
+
+.mins {
+    display: inline-block;
+    font-family: Poppins;
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .3px;
+    text-align: left;
+    color: $grayish;
+    position: relative;
+    bottom: .3125rem;
+}
+
+.description {
+    font-family: Work Sans;
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1.29;
+    letter-spacing: .1px;
+    text-align: left;
+    color: $grayish;
+    padding: .625rem 0 .625rem .625rem;
+    border-top: 1px solid $grayish;
+}

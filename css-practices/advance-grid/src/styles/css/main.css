@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-width: 31.25rem;
+  margin: auto;
+}
+
+h2 {
+  font-family: Poppins;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #ffa500;
+  padding: 0.625rem 0 0.625rem 0.625rem;
+}
+
+.mins {
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #4a4a4a;
+  position: relative;
+  bottom: 0.3125rem;
+}
+
+.description {
+  font-family: Work Sans;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.29;
+  letter-spacing: 0.1px;
+  text-align: left;
+  color: #4a4a4a;
+  padding: 0.625rem 0 0.625rem 0.625rem;
+  border-top: 1px solid #4a4a4a;
+}
+
+footer, header {
+  background-color: #ffa500;
+  text-align: center;
+  min-width: 31.25rem;
+}
+
+.logo {
+  width: 14rem;
+  height: 7rem;
+  object-fit: contain;
+  padding: 1.25rem;
+}
+
+footer {
+  margin-top: 2.75rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 19rem 19rem;
+  grid-template-rows: repeat(3, 28.125rem);
+  grid-auto-rows: 28.125rem;
+  grid-auto-flow: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+main .recipe {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+  width: 12.5rem;
+}
+main .recipe .recipe-image {
+  width: 100%;
+  height: auto;
+}
+main .recipe .time {
+  width: 1.4rem;
+  height: auto;
+  margin-left: 0.625rem;
+}
+main .a {
+  align-self: end;
+}
+main .c {
+  justify-self: start;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 18px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: center;
+}
+
+.container {
+    background-color: whitesmoke;
+}
+
+.box {
+    background-color: dodgerblue;
+    height: 100px;
+    width: 100px;
+    border: 1px solid lightgray;
+}
+
+
+/* 
+    Once you set the display flex to an element, all its children become flex item.
+    In this example, all the children from the container element were in block position,
+    after applying the display: flex, all flex items took the inline-block position. 
+*/
+
+#flex {
+    display: flex;
+}
+
+/* Inline-flex */
+
+.small-container {
+    width: 150px;
+    border: 1px solid grey;
+    display: inline-flex;
+}
+
+/* Using justify-content */
+
+.flex {
+    display: flex;
+    height: 150px;
+}
+
+#flex-start {
+    justify-content: flex-start;
+}
+
+#flex-end {
+    justify-content: flex-end;
+}
+
+#flex-center {
+    justify-content: center;
+}
+
+#space-around {
+    justify-content: space-around;
+}
+
+#space-between {
+    justify-content: space-between;
+}
+
+/* Align-items */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.baseline {
+    height: 120px;
+    width: 120px;
+    border: 3px solid turquoise;
+}
+
+#align-start {
+    align-items: flex-start;
+}
+
+#align-end {
+    align-items: flex-end;
+}
+
+#align-center {
+    align-items: center;
+}
+
+#align-baseline {
+    align-items: baseline;
+}
+
+#align-stretch {
+    /*min-height: ;*/
+}
+
+/* Flex-grow */
+
+#top,
+#middle,
+#bottom {
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: center;
+    min-height: 200px;
+    align-items: center;
+}
+
+.top,
+.middle,
+.bottom,
+.new-box {
+    width: 100px;
+    height: 100px;
+    background-color: dodgerblue;
+    border: 2px solid lightgray;
+    margin: 10px 30px;
+}
+
+.top.side,
+.top.center {
+    flex-grow: 1;
+}
+
+.middle.center {
+    flex-grow: 1;
+}
+
+.bottom.side {
+    flex-grow: 1;
+}
+
+.bottom.center {
+    flex-grow: 2;
+}
+
+/* Flex-Shrink */
+
+.shrink.top.side {
+    flex-shrink: 2;
+    flex-grow: 0;
+}
+
+.shrink.top.center {
+    flex-grow: 0;
+}
+
+.shrink.middle.side,
+.shrink.middle.center {
+    flex-grow: 0;
+}
+
+.shrink.middle.side {
+    flex-shrink: 0;
+}
+
+.shrink.bottom.side,
+.shrink.bottom.center {
+    flex-grow: 0;
+}
+
+.shrink.bottom.center {
+    flex-shrink: 2;
+}
+
+/* Flex-basis */
+
+.grow.side {
+    flex-basis: 60px;
+    flex-grow: 1;
+}
+
+.grow.center {
+    flex-grow: 3;
+}
+
+.shrink.side {
+    flex-basis: 300px;
+    flex-shrink: 3;
+}
+
+.shrink.center {
+    flex-basis: 150px;
+    flex-shrink: 2;
+}
+
+/* 
+    FLEX PROPERTY 
+    The shorthand flex property:
+    
+    flex: 2 1 150px;
+        - The first value is for the flex-grow
+        - The second value is for the flex-shrink
+        - The third value is for the flex-basis
+
+    you can use the three values at once of just two
+        - flex: 2 1;
+        - flex: 1 20px;
+*/
+
+#top .side {
+    flex: 2 2 100px;
+}
+
+#top .center {
+    flex: 1 3 50px;
+}
+
+#bottom .side {
+    flex: 1 2 75px;
+}
+
+#bottom .center {
+    flex: 2 1 100px;
+}

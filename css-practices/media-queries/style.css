@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+.text-box h1 {
+    font-size: 2rem;
+}
+
+.text-box p {
+    font-size: 1rem;
+}
+
+/*
+    CSS uses media queries to adapt a website's content to different screen sizes.
+
+    @media                  -   This is the media query rule and instructs the css compiler on how to parse the rest of the rule.
+    only screen             -   Indicates what types of devices should use this rule/s.
+    and (max-width: 480px)  -   media feature, is the conditions that must be met.
+    {}                      -   The new rule to apply should be inside the curly braces.
+*/
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/*
+    Range
+    Specific screen sizes can be targeted by setting multiple width and height media features.
+
+    I can read this example like: since the screen has a 320px width to 400px width, this rule
+    must be apply.
+*/
+
+@media only screen and (min-width:320px) and (max-width: 400px) {
+    .text-box {
+        background-color: blueviolet;
+    }
+}
+
+/* 
+    Dots Per Inch (DPI)
+    Another media feature you can target is screen resolution.
+    To target by resolution, you can use the min-resolution and max-resolution, these media features 
+    accept a resolution value in either dots per inch resolution measurements.
+
+    @media only screen and (min-resolution: 300dpi) {}
+
+    This example targets high resolution screens by making sure the screen resolution is at least 300 dpi.
+    If the screen resolution query is met, then you can use CSS to display high resolution images and other media.
+*/
+
+/*
+    Comma Separated List
+    If only one of multiple media features in a media query must be met, media features can be separated
+    in comma separated list.
+
+    @media only screen and (min-width: 480px),
+    (orientation: landscape){
+         css ruleset 
+    }
+
+    Example: if you need to apply a style when only one of the above media queties is true
+    We use the comma (,) to separate multiple rules.
+*/
+
+@media only screen and (min-width: 700px),
+(orientation: landscape) {
+    .text-box {
+        background-color: brown;
+    }
+}
+
+/*
+    Breakpoints
+    The points at which media queries are set are called breakpoints.
+    Breakpoints are the screen sizes at which your wev page does not appear properly.
+
+    Rather than set breakpoints bases on specific devices, the best practice is to resize your browser to view
+    where the website naturally breaks based on its content.
+*/

@@ -1,0 +1,235 @@
+/*
+    The grid comprises three major components: columns, gutters, and margins.
+
+        - columns - defined as the vertical sections that span the webpage's width, it's common to see layouts consisting
+        of 12 or 16 columns.
+        - gutter - is the negative space between each column
+        - margins - it's the space that appears on the left and right sides of the column
+*/
+
+/*
+    Creating a Grid
+    To set up a grid, you need to have a grid container and grid items.
+    To turn an HTML element into a grid container, you must set the element's display property to one of two values:
+        grid            -   for a block level grid
+        inline-grid     -   for an inline grid
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    With the grid value, you get that all boxes fixes the grid-container's height regarless that the boxes don't have an specific height.
+*/
+
+.grid {
+    display: grid;
+    border: 2px solid blue;
+    width: 400px;
+    height: 500px;
+}
+
+.box {
+    background-color: beige;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+}
+
+/*
+    Creating Columns
+    By default, grids contain only one column. If you were to start adding items, each item would be put on a new row.
+
+    You can define the columns of your grid with the: 
+        - grid-template-columns
+*/
+
+/*
+    With implemantation, the grid-item's width go outside the boundaries of the grid-container.
+*/
+
+.grid {
+    grid-template-columns: 100px 50% 200px;
+}
+
+/*
+    Creating Rows
+    To specify the number and size of the rows, you need to use the grid-template-rows property.
+*/
+
+.grid {
+    grid-template-rows: 40% 50% 50px;
+}
+
+/*
+    Grid Template
+    This shorthand property, can replace the previous two properties. Both grid-template-colums & grid-template-rows
+
+    grid-template: 40% 50% 50px / 100px 50% 200px;
+
+    The values before the / <- belong to rows
+    The values after the / -> belong to columns
+*/
+
+/*
+    Fraction
+    By using the fr unit, you can define the columns and rows's size as a fraction of the grid's length and width. This unit is only for grids
+*/
+
+.grid {
+    grid-template-columns: 3fr 50% 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/*
+    Repeat
+    The repeat() function will duplicate the specificationd for rows or columns a given number of times. Example:
+        - grid-template-columns: repeat(3, 100px);
+    This will create a layout with 3 columns with 100px wide each one.
+*/
+
+.grid-2 {
+    display: grid;
+    /*grid-template: repeat(3, 1fr) / 3fr 50% 1fr;*/
+    border: 2px solid blue;
+    width: 400px;
+    height: 500px;
+}
+
+/*
+    minmax
+    you need to use the minmax() function, when you want that your grid resizes based on the web browser's size
+    This function takes two parameter
+        - the minimum size
+        - the maximum size
+*/
+
+.grid-2 {
+    width: 100%;
+    grid-template: repeat(3, 1fr) / 3fr minmax(50px, 300px) 1fr;
+}
+
+/*
+    Grid Gap
+    The CSS properties row-gap & column-gap will put blank space between every row and column in the grid
+
+    It's important to note that grid gap properties do not add space at the beginning or end of the grid.
+
+        - column-gap  // To set the columns gap
+        - row-gap    // To set the rows gap
+        - gap        // To set both column row
+*/
+
+.grid-2 {
+    row-gap: 20px;
+    column-gap: 5px;
+}
+
+.grid {
+    gap: 20px 5px;
+}
+
+/*
+    Multiple Row Items
+    Using grid-row-start and grid-row-end, you can make single grid items take up multiple rows.
+
+*/
+
+.grid-3 {
+    display: grid;
+    border: 2px solid blue;
+    height: 500px;
+    width: 500px;
+    grid-template: repeat(4, 1fr 2fr) / repeat(4, 3fr 2fr);
+    gap: 5px;
+}
+
+.a {
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+/*
+    Grid Row
+    You can use the property grid-row as shorthand for grid-row-start and grid-row-end
+    Syntax: 
+        grid-row: 4 / 6;
+        first value is for start
+        second value is for end
+*/
+
+.a-ref {
+    grid-row: 5 / 7;
+}
+
+/*
+    Grid Column
+    You can use: 
+        - grid-column-start
+        - grid-column-end
+        - grid-column
+    These properties allow a grid item to span multiple columns.
+
+    you can also use the keyword span
+*/
+
+.b {
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 7;
+}
+
+.b-ref {
+    grid-row: 2 / span 3;
+    grid-column: 2 / span 6;
+}
+
+/*
+    Grid Area
+    You can refactor even more using the property grid-area.
+    This property will set the starting position and the ending positions for both the rows and columns of an item.
+
+    grid-area takes four values separated by slashes.
+        first value - grid-row-start
+        second value - grid-colum-start
+        third value - grid-row-end
+        fourth value - grid-column-end
+
+    grid-area: 2 / 3 / 4 / span 5;
+*/
+
+.c {
+    grid-area: 6 / 8 / span 3 / span 1;
+}
+
+/*
+    Testing knowledage
+*/
+
+.grid-test {
+    display: grid;
+    grid-template-columns: 25% 25% 2fr 1fr;
+    grid-auto-rows: repeat(4, 1fr);
+    gap: 10px 15px;
+    border: 2px solid blue;
+    height: 600px;
+    width: 600px;
+}
+
+.a-test {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.b-test,
+.c-test {
+    grid-column: 3 / span 2;
+}
+
+.d-test,
+.e-test {
+    grid-column: 1 / span 4;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Radio buttons</title>
+</head>
+
+<body>
+    <h2>There are two appropriate ways to layout radio button in HTML</h2>
+    <h3>The first - wraps the input within the label</h3>
+    <label for="">
+        <input type="radio" name="radio">
+        Radio label text
+    </label>
+    <h3>The second - input and label be siblings</h3>
+    <input type="radio" name="radio" id="radio1" />
+    <label for="radio1">Radio label text</label>
+    <br>
+    <br>
+    <p>For a group of radio buttons, it is also necessary to provide the same name attribute.</p>
+    <label class="form-control">
+        <input type="radio" name="radio">
+        Radio
+    </label>
+    <label class="form-control">
+        <input type="radio" name="radio">
+        Radio - checked
+    </label>
+</body>
+
+</html>

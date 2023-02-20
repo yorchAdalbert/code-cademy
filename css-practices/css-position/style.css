@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    Setting the position to absolute, all others element in the browser will ignore the element
+    that has this rule set.
+*/
+
+p {
+    background-color: aquamarine;
+    width: 90%;
+    height: 25px;
+    position: absolute;
+    left: 5%;
+    bottom: 32%;
+    text-align: center;
+}
+
+.green-box {
+    width: 50%;
+    height: 250px;
+    background-color: green;
+    position: relative;
+    top: 50px;
+}
+
+.blue-box {
+    width: 50%;
+    height: 250px;
+    background-color: blue;
+    position: relative;
+    left: 50%;
+}
+
+.purple {
+    height: 400px;
+    width: 100%;
+    background-color: purple;
+    position: absolute;
+    opacity: .5;
+}
+
+.red {
+    height: 250px;
+    width: 100%;
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+    width: 30%;
+    height: 50px;
+    position: sticky;
+    bottom: 80%;
+    left: 80%;
+    text-align: center;
+}
+
+.orange {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    position: absolute;
+    top:900px;
+    z-index: 1;
+}
+
+.pink {
+    width: 50px;
+    height: 100px;
+    background-color: pink;
+    position: absolute;
+    top: 900px;
+}
+
+.azure {
+    background-color: azure;
+    width: 33%;
+    height: 100px;
+    display: inline-block;
+}
+
+/*
+    when you set the position to fixed in an element, you need to set the position to the element below to absolute
+    and modify the top offset property.
+    The fixed value remove the element from the html flow. 
+*/
+
+.title {
+    position: fixed;
+    text-align: center;
+    color: rebeccapurple;
+}
+
+/* Using the float property */
+
+.brown {
+    background-color: brown;
+    width: 50%;
+    height: 150px;
+}
+
+.light-blue {
+    background-color: lightblue;
+    width: 50%;
+    height: 150px;
+    float: right;
+}

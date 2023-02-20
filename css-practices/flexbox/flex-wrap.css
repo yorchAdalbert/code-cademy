@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    Flex-wrap is used to move the flex items to the next line when necessary
+
+    This property has three values.
+
+    -   wrap: flex items that don't fit into the row will move down to the next line.
+    -   wrap-reverse: The same functionality as wrap, but the order of rows within a flex container is reversed.
+    -   nowrap: prevents items from wrapping, this is the default value.
+
+    Note: The flex-wrap property is declared on flex containers.
+*/
+
+h1,
+h3 {
+    text-align: center;
+}
+
+.container {
+    background-color: dodgerblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 125px;
+}
+
+.box {
+    background-color: whitesmoke;
+    border: 1px solid white;
+    width: 100px;
+    height: 100px;
+}
+
+#wrap {
+    flex-wrap: wrap;
+}
+
+#nowrap {
+    flex-wrap: nowrap;
+}
+
+#reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/*
+    align-content
+
+    The property align-items is for aligning elements withing a single row in other hand the align-content property is used to space the rows from top to bottom.
+
+    Some align-content values
+
+    -   flex-start
+    -   flex-end
+    -   center
+    -   space-between
+    -   space-around
+    -   stretch
+*/
+
+.new-container {
+    height: 300px;
+    width: 600px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.left,
+.center,
+.right {
+    min-height: 75px;
+    width: 200px;
+    margin: 2px;
+    background-color: dodgerblue;
+    border: 2px solid lightgray;
+}
+
+#flexstart {
+    align-content: flex-start;
+}
+
+#flexend {
+    align-content: flex-end;
+}
+
+#center {
+    align-content: center;
+}
+
+#between {
+    align-content: space-between;
+}
+
+#around {
+    align-content: space-around;
+}
+
+/*
+    flex-direction
+
+    Flex containers have two axes: a main axis and a cross axis. By default, the main axis is horizontal and the cross axis is vertical.
+
+    The main axis is used to position flex items with the following properties:
+        -   justify-content
+        -   flex-wrap
+        -   flex-grow
+        -   flex-shrink
+
+    The cross axis is used to position flex items with the following properties:
+        -   align-items
+        -   align-content
+
+    You can interchange the main axis using the flex-direction property. You just need to give it a value of column or row
+
+    flex-direction values:
+
+        -   row
+        -   row-reverse
+        -   column 
+        -   column-reverse
+
+    Note: The flex-direction property is declared on flex containers
+
+*/
+
+.container-v2 {
+    background-color: dodgerblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 600px;
+}
+
+#row {
+    flex-direction: row;
+}
+
+#row-reverse {
+    flex-direction: row-reverse;
+}
+
+#column {
+    flex-direction: column;
+}
+
+#column-reverse {
+    flex-direction: column-reverse;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+/*
+    flex-flow
+
+    The shorthand flex property is used to declare both the flex-wrap and flex-direction properties in one line.
+
+    syntax:
+        flex-flow: column wrap;
+
+        - first value: the flex direction
+        - second value: the flex wrap
+
+    Note: The flex-flow property is declared on flex containers.
+*/
+
+
+/*
+    Nested flex-boxes
+*/
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgray;
+    width: 400px;
+    height: 700px;
+}
+
+.container-v2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: dodgerblue;
+    border: 1px solid white;
+}
+
+.child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    background-color: whitesmoke;
+    border: 1px solid snow;
+}

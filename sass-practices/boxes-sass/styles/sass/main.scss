@@ -1,0 +1,50 @@
+// Variables
+
+$red-color: red;
+$purple-color: purple;
+$green-color: green;
+$standart-border: 4px solid black;
+
+// Mixins
+
+@mixin createBox($width, $hight, $color) {
+    width: $width;
+    height: $hight;
+    background-color: $color;
+}
+
+@mixin contentFrame($padding, $margin, $border, $width, $hight) {
+    padding: $padding;
+    margin: $margin;
+    border: $border;
+    width: $width;
+    height: $hight;
+}
+
+// Using Mixins
+
+.container {
+    .box-1 {
+        @include createBox(300px, 300px, $red-color);
+
+        .content {
+            @include contentFrame(5px, 50px, $standart-border, 100px, 100px);
+        }
+    }
+
+    .box-2 {
+        @include createBox(500px, 250px, $green-color);
+
+        .content {
+            @include contentFrame(30px, 50px, $standart-border, 300px, 100px);
+        }
+    }
+
+    .box-3 {
+        @include createBox(1000px, 500px, $purple-color);
+
+        .content {
+            @include contentFrame(10px, 100px, $standart-border, 500px, 300px);
+        }
+    }
+}

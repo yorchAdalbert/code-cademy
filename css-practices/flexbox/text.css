@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.galery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 70rem;
+    background-color: blueviolet;
+}
+
+.product-image {
+    flex-grow: 1;
+    min-width: 19rem;
+    height: 20rem;
+    background-color: azure;
+    margin: .5rem;
+}
+
+.special {
+    max-width: 22.4rem;
+}

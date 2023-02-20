@@ -1,0 +1,124 @@
+/* Universal Selector*/
+* {
+    border: 1px solid red;
+}
+
+/* Type Selector*/
+
+p {
+    color: green;
+}
+
+h1 {
+    color: maroon;
+}
+
+/* Class Selector*/
+
+.title {
+    color: teal;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.heading-background {
+    background-color: aqua;
+}
+
+/* Id Selector */
+
+#article-title {
+    font-family: cursive;
+}
+
+#publish-time {
+    color: gray;
+}
+
+/* Attribute Selector */
+
+a[href*='florence'] {
+    color: lightgreen;
+}
+
+a[href*='beijing'] {
+    color: lightblue;
+}
+
+a[href*='seoul'] {
+    color: lightpink;
+}
+
+/* 
+    Pseudo-Classes Selector 
+    :focus  :visited    :disabled   :active 
+    Those are some examples of pseudo-classes
+*/
+
+a:hover {
+    color: darkorange;
+}
+
+/* Chaining */
+
+h2.destination {
+    font-family: Tahoma;
+}
+
+/* Descendant Combinator */
+
+.description h5 {
+    color: blueviolet;
+}
+
+.destination-list li {
+    color: purple;
+}
+
+/* Multiple Selectors */
+
+h5,
+li {
+    font-family: monospace;
+}
+
+.parent {
+    background-color: brown;
+}
+
+.child {
+    background-color: coral;
+    height: 150px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+/* The overflow property must be set in the parent element */
+.overflow {
+    background-color: crimson;
+    height: 150px;
+    width: 200px;
+    overflow: visible;
+}
+
+.more-width {
+    background-color: cornflowerblue;
+    height: 100px;
+    width: 300px;
+}
+
+/* 
+    With the visibility property you can make an element to hides, appears or collapse
+    using this values: hidden, display, collapse
+*/
+.future {
+    visibility: hidden;
+}
+
+/* 
+    Note: What’s the difference between display: none and visibility: hidden? An element with display: none will be completely removed 
+    from the web page. An element with visibility: hidden, however, will not be visible on the web page, but the space reserved for it will.
+*/

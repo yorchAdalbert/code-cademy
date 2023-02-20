@@ -1,0 +1,172 @@
+// Variables
+
+$stripe-properties: to bottom, 15%, blue, white;
+
+// MIXINS
+// A mixin lets you make groups of css declarations, that you you want to reuse thoughout your site. It's like a fumction.
+
+// mixin sytax
+
+@mixin stripes($direction, $width-percent, $stripe-color, $stripe-background: #FFF) {
+    background: repeating-linear-gradient($direction,
+            $stripe-background,
+            $stripe-background (
+            $width-percent - 1),
+        $stripe-color 1%,
+        $stripe-background $width-percent
+    );
+}
+
+@mixin photo-content($file) {
+    content: url(#{$file}.jfif); // String interpolation
+    object-fit: cover;
+}
+
+@mixin transform($transformation) {
+    transform: $transformation;
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -ms-transform: $transformation;
+    -o-transform: $transformation;
+}
+
+// Using a default value as a parameter inside the mixin
+@mixin backface-visibility($visibility: hidden) {
+    backface-visibility: $visibility;
+    -webkit-backface-visibility: $visibility;
+    -moz-backface-visibility: $visibility;
+    -ms-backface-visibility: $visibility;
+    -moz-backface-visibility: $visibility;
+}
+
+@mixin transform-style($style) {
+    transform-style: $style;
+    -moz-transform-style: $style;
+    -o-transform-style: $style;
+    -ms-transform-style: $style;
+    -webkit-transform-style: $style;
+}
+
+@mixin transition($time) {
+    transition: $time;
+    -webkit-transition: $time;
+    -moz-transition: $time;
+    -o-transition: $time;
+}
+
+@mixin hover-color($color) {
+    &:hover {
+        color: $color;
+    }
+}
+
+// pseudo-elements is used to style parts of an element - ::before,::after, :hover
+
+// In Sass, the & character is used to specify exactly where a parent selector should be inserted.
+// It also helps write pseudo classes in a much less repetitive way.
+
+.notecard {
+    width: 300px;
+    height: 180px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 20px;
+    font-family: Roboto, sans-serif;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .2);
+    @include transform-style(preserve-3d);
+    @include transition(0.4s);
+
+    &:hover {
+        // Calling a mixin
+        @include transform (rotatey(-180deg));
+    }
+
+    .front,
+    .back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        @include backface-visibility;
+    }
+
+    .front {
+        z-index: 3;
+        font-size: 20px;
+
+        .word {
+            display: block;
+            text-align: center;
+            position: relative;
+            top: 40%;
+            @include hover-color(purple);
+        }
+    }
+
+    .back {
+        z-index: 1;
+        word-wrap: break-word;
+        line-height: 1.6;
+        @include transform(rotatey(-180deg));
+
+        .definition {
+            width: 100%;
+            height: 100%;
+            @include stripes($stripe-properties...)
+        }
+
+        .photo {
+            @include photo-content('../../image/titanosaur'); // using string interporlation
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+}
+
+/*
+    Mixin Facts
+
+    1. Mixins can takes multiple arguments
+    2. Sass allow you to explicitly define each argument in your @include statement
+    3. When values are explicitly specified you can send them out or order
+    4. If a mixin definition has a combination of arguments with and without a default value, you should define the ones with no default value first
+    5. Mixins can be nested
+
+    @mixin dashed-border($width, $color: #FFF) {
+  border: {
+     color: $color;
+     width: $width;
+     style: dashed;
+  }
+}
+ 
+span { //only passes non-default argument
+    @include dashed-border(3px);
+}
+ 
+p { //passes both arguments
+    @include dashed-border(3px, green);
+}
+ 
+div { //passes out of order but explicitly defined
+   @include dashed-border(color: purple, width: 5px); 
+}
+*/
+
+// List Arguments
+// Sass allows you to pass in multiple arguments in a list or a map format.
+
+/*
+    Map syntax: 
+
+    $college-ruled-style: ( 
+        direction: to bottom,
+        width-percent: 15%,
+        stripe-color: blue,
+        stripe-background: white
+    );
+*/
+
+// String Interpolation
+
+// Is the process of placing a variable string in the middle of two other strings

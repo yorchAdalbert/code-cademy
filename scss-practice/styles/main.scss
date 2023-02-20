@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+//Add variables here:
+
+$translucent-white: rgba(255, 255, 255, 0.3);
+$white-color: #ffcfcf;
+
+// Number type variable
+
+$icon-square-length: 300px;
+
+// LISTS AND MAPS
+
+$standard-border: 4px solid black;
+
+// Maps syntax
+// (key1: value1, key2: value2);
+
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+
+// Nesting Selectors
+// Nesting is the process of pleacing selectors inside the scope of another selector
+
+.banner {
+    font-family: 'Pacifico', cursive;
+    height: 400px;
+    background-image: url(../images/lemo-banner.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .slogan {
+        position: absolute;
+        border: $standard-border;
+        top: 200px;
+        left: 25%;
+        width: 50%;
+        height: 200px;
+        text-align: center;
+        background-color: $translucent-white;
+    }
+
+    span {
+        font-size: 24px;
+        line-height: 200px;
+    }
+
+    /*
+        Nesting Properties
+
+        You can also nest common CSS properties using a : colon suffix after the name of the property
+
+        .parent {
+            font : {
+                family: Roboto, sans-serif;
+                size: 12px;
+                decoration: none;
+            }
+        }
+    */
+
+    border : {
+        top: $standard-border;
+        bottom: $standard-border;
+    }
+
+}
+
+.container {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+
+    .icon {
+        display: inline-block;
+        margin: 2%;
+        border: $standard-border;
+        font-size: 32px;
+        width: $icon-square-length;
+        height: $icon-square-length;
+    }
+}
+
+/*
+    If you have in a section the same property all over its decendants, you can apply this shorthand CSS selector for applying a property to all direct children.
+
+    .main {
+        > * {
+            padding-left: 30px;
+        }
+    }
+*/

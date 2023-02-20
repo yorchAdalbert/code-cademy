@@ -1,0 +1,59 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    /* It used to align grid items in the horizontal axis*/
+    justify-items: center;
+}
+
+.card {
+    background-color: orange;
+}
+
+.justify-content {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-areas: "left right";
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.left {
+    background-color: red;
+}
+
+.right {
+    background-color: blue;
+}
+
+.align-items {
+    display: grid;
+    grid-template-rows: repeat(3, 400px);
+    align-items: center;
+}
+
+.align-content {
+    display: grid;
+    height: 600px;
+    grid-template-rows: repeat(2, 200px);
+    grid-template-areas: "top bottom";
+    align-content: center;
+    background-color: antiquewhite;
+}
+
+.top,
+.bottom {
+    background-color: blueviolet;
+}
+
+/* Implicity Grid layout */
+
+.auto-grid {
+    display: grid;
+    grid: repeat(2, 100px) / repeat(2, 150px);
+    grid-auto-rows: 100px;
+}
+
+.box-colored {
+    background-color: aqua;
+}

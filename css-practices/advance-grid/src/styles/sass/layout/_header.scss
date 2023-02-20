@@ -1,0 +1,12 @@
+@use '../base' as *;
+
+header {
+    @extend %colored-banner;
+}
+
+.logo {
+    width: 14rem;
+    height: 7rem;
+    object-fit: contain;
+    padding: 1.25rem;
+}

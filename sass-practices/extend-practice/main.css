@@ -1,0 +1,13 @@
+.lemonade, .strawberry {
+  display: inline-block;
+  width: 300px;
+  height: 500px;
+  border: 10px solid yellow;
+  background-color: #fdd;
+}
+
+.strawberry {
+  border-color: red;
+}
+
+/*# sourceMappingURL=main.css.map */

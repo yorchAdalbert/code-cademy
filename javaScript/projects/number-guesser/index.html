@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Number Guesser</title>
+</head>
+
+<body>
+    <main class="game__container">
+        <section class="game__content">
+            <h1>Number Guesser!</h1>
+            <h2>Round 1</h2>
+            <p>Target Number: ?</p>
+        </section>
+        <section class="game__panel">
+            <div class="computer">
+                <h3>Computer</h3>
+                <p>Score: 0</p>
+                <p class="guess-number"></p>
+            </div>
+            <div class="user">
+                <h3>You</h3>
+                <p>Score: 0</p>
+                <form action="">
+                    <input type="number" min="0" max="10">
+                </form>
+                <p class="button">Make a Guess</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="game-steps">
+        <section class="step">
+            <h4>Step 1</h4>
+            <p>Input a number between 0 and 9</p>
+        </section>
+        <section class="step">
+            <h4>Step 2</h4>
+            <p>
+                Click "Make a Guess" to submit your guess and see
+                who won the round.
+            </p>
+        </section>
+        <section class="step">
+            <h4>Step 3</h4>
+            <p>Click "Next Round" To play again.</p>
+        </section>
+    </footer>
+</body>
+
+</html>

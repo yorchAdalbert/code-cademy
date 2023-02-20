@@ -1,0 +1,65 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    color: #2e3738;
+}
+
+$parallax-height: 100vh;
+$center-margin: 0 auto;
+
+// Mixins
+
+@mixin parallax-background($file) {
+    background: url($file) no-repeat center center fixed;
+    @include background-size;
+}
+
+@mixin background-size {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -moz-background-size: cover;
+}
+
+// Rules sets
+
+#landscape {
+    @include parallax-background("https://content.codecademy.com/projects/sass/landscape.jpg");
+}
+
+#monkeys {
+    @include parallax-background("https://content.codecademy.com/projects/sass/monkeys.jpg")
+}
+
+#landscape,
+#monkeys {
+    width: 100%;
+    height: $parallax-height;
+    perspective: 1px;
+    transform: translate(-1px);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    h1 {
+        text-transform: uppercase;
+        font-family: 'Bitter', serif;
+        letter-spacing: 0.06em;
+        font-size: 120px;
+        color: #fff;
+        opacity: 0.7;
+        text-align: center;
+        transform: translateZ(-2px);
+    }
+}
+
+p {
+    width: 70%;
+    padding: 5%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.4;
+}

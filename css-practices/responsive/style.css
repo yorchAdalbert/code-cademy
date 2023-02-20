@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    The em represents the font-size of the current element or the default base font-size set by the browser if none
+    is given.
+
+    If the the base font of a browser is 16px, then 1 em is equal to 16px and 2 ems would be equal to 32px.
+*/
+
+.heading {
+    font-size: 2em;
+    /* no base font-size given, so 2em equals 32px */
+}
+
+.splash-section {
+    font-size: 18px;
+}
+
+.splash-section p {
+    font-size: 1.5em;
+}
+
+/*
+    Rem - stands for root em. It acts similar to em, but instead of checking parent elements to size font, 
+    it checks the root element. The root element is the <html> tag.
+
+    Most browser set the font size of <html> to 16px, so by default rem measurements will be compared to that
+    value.
+
+    One advantange of using rems is that all elements are compared to the same font size value, making it easy to predict
+    how large or small font will appear.
+*/
+
+html {
+    font-size: 20px;
+    /* Setting a different font size for the root element*/
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/*
+    Percentages: Height & width
+    When percentages are used, elements are sized relative to the dimensions of their parent element.
+
+    Note: Because the box model includes padding, borders, and margins, setting an element's width to 100% may cause content to overflow its parent container. While tempting, 100% should only be used when content will not have padding, border, or margin.
+
+*/
+
+.main {
+    height: 300px;
+    width: 500px;
+    background-color: blueviolet;
+}
+
+.main .subsection {
+    background-color: cadetblue;
+    width: 50%;
+    height: 50%;
+}
+
+/*
+    Percentages: Padding & Margin
+
+    Percentages can also be used to set the padding and margin of elements.
+
+    When percentages are used to set padding and margin, however, they are calculated bases only on the width of the parent element.
+
+    An unset parent height results in a constantly changing height sue to changes to the child element. This is why vertical padding and margin are based on the width of the parent, and not the height.
+*/
+
+/*
+    Width: Minimum & Maximum
+
+    Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a website can lose their integrity when they become too small or large. You can limit how wide an element becomes with the following properties:
+        - min-width - ensures a minimum width for an    element
+        - max-width - ensures a maximum width for an element
+*/
+
+.box p {
+    min-width: 300px;
+    max-width: 600px;
+    background-color: aqua;
+}
+
+/*
+    Height: Minimum & Maximum
+
+    You can also limit the minimum and maximum height of an element.
+        - min-height - ensures a minimum height for an element's box
+        - max-height - ensures a maximum height for an element's box
+*/
+
+.box-height {
+    min-height: 150px;
+    max-height: 300px;
+    background-color: bisque;
+}
+
+/*
+    Scaling Images and videos
+*/
+
+.container,
+.container-2 {
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container-2 img {
+    max-height: 100%;
+    width: auto;
+    display: block;
+}
+
+/*
+    It's worth memorizing the entire example above. It represents a very common design pattern used to scale images and videios proportionally.
+
+    Note: The example above scales the width of an image or video to the width of a container. If the image is larger than the container, the vertical portion of the image will overflow and will not display. To swap this behaivor, you can set max-height to 100% and width to auto. This will scale the height of the image with the height of the container instead. If the image is larger than the container, the horizontal portion of the image will overflow and not display.
+*/
+
+/*
+    Scaling Background images
+
+
+*/
+
+.background-img {
+    width: 100%;
+    height: 500px;
+    background-image: url(data:image/jpeg;base64,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);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
